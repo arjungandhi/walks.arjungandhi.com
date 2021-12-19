@@ -1,0 +1,34 @@
+{{- $id := .Get "id" | default (.Get 0) -}}
+{{- $type := .Get "type" | default (.Get 1) -}}
+{{- $width := .Get "width" | default (.Get 2) -}}
+
+{{ $seed := now }}
+<!--generate a random seed to avoid id's matching up-->
+{{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+
+
+<div class="center">
+    <div {{ if $width}}style="width:{{$width}}%" class="adjusted-width" {{else}} class="center fill-parent" {{end}} >
+        <div id="{{$id}}{{ $random }}" class="loading">
+    </div>
+    </div>
+</div>
+<script type="module">
+    let container_div = document.getElementById("{{$id}}{{ $random }}")
+    container_div.classList.add('loading')
+    let observer_function = (mutations, observer) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+                mutation.target.classList.remove('loading')
+                observer.disconnect()
+            }
+        })
+    }
+    [container_div].forEach((el) => {
+        let observer = new MutationObserver(observer_function)
+        observer.observe(el, {
+            childList: true
+        })
+    })
+    photo_function("{{$id}}", "{{$id}}{{ $random }}", "{{$type}}")
+</script>

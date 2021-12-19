@@ -1,0 +1,150 @@
+/* PRETTY PLEASE CODE */
+
+/*pretty forms*/
+input.pretty.input,
+textarea.pretty.input {
+  max-width: 100%;
+  resize: vertical;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin: 0.5em 0;
+  border: 2px solid #d8dee9;
+  background-color: transparent;
+  margin: 1em;
+  color: #d8dee9;
+}
+
+textarea.pretty.input {
+  height: 10em;
+}
+
+.pretty.input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d8dee9;
+  opacity: 0.5; /* Firefox */
+}
+
+/*containers*/
+.pretty.container {
+  display: block;
+}
+
+.pretty.container > canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.pretty.right.container {
+  text-align: right;
+}
+
+.pretty.left.container {
+  text-align: left;
+}
+
+.pretty.fluid.contianer {
+  width: auto;
+}
+
+/*Mobile */
+@media (max-width: 750px) {
+  .pretty.container {
+    width: auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+}
+
+/*table*/
+@media screen and (min-width: 751px) and (max-width: 1000px) {
+  /* start of large tablet styles */
+  .pretty.container {
+    width: 650px;
+  }
+
+
+  
+}
+/* Computers*/
+@media screen and (min-width: 1000px) {
+  .pretty.container {
+    width: 960px;
+  }
+
+}
+
+/*hide if on mobile and tables cause itll be too big*/
+@media screen and (max-width: 1000px) {
+  .pretty.small-check {
+    display: none !important;
+  }
+
+}
+
+/*Images */
+.pretty.image{
+  width: 500px; 
+  max-width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  background-color: transparent;
+}
+
+/* Buttons */
+.pretty.button {
+  font-size: 1em;
+  color: #d8dee9;
+  font-weight: bold;
+  background-color: #5E81AC;
+  display: inline-block;
+  padding: 0.5em 1.25em;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 0.5em;
+  text-align: center;
+  max-width: 100%;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.pretty.rounded.button {
+  border-radius: 1em;
+}
+
+/* slider */
+.slider_box {
+  width: 200px;
+}
+
+.slider{
+  -webkit-appearance: none;
+  background: #4C566A;
+  margin: 0px 1em;
+  width: auto;
+  height: 6px;
+  border-radius: 8px;
+  opacity: 2;
+}
+
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #5E81AC  ;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #5E81AC  ;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
